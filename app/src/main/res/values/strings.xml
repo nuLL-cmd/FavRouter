@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FavRouter</string>
+    <string name="title_activity_maps">
+        <font size="18" color="#ffffff">Selecione a localização</font>
+    </string>
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5c6bc0"
+        android:id="@+id/appbar_main">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:id="@+id/toolbar_main">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ponto_location"
+                android:id="@+id/img_title"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_title"
+                android:paddingLeft="6dp"
+                android:text="FavLocation"
+                android:textSize="19sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:paddingStart="6dp"
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:backgroundTint="#5c6bc0"
+        android:id="@+id/bottombar_main"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        app:backgroundTint="#ffffff"
+        app:borderWidth="4dp"
+        android:elevation="3dp"
+        android:src="@drawable/ic_add"
+        android:backgroundTint="#3f51b5"
+        android:id="@+id/btn_add"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:layout_below="@id/appbar_main"
+        android:id="@+id/cardview_main">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relative_main"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/maps"
+                android:id="@+id/img_main"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Locais favoritos"
+                android:textSize="30sp"
+                android:layout_alignBottom="@id/img_main"
+                android:background="@drawable/background_label"
+                android:id="@+id/txt_subTitle"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        tools:listitem="@layout/layout_celula"
+        android:id="@+id/recycle_main"
+        android:layout_marginEnd="5dp"
+        android:layout_above="@id/bottombar_main"
+        android:layout_below="@id/cardview_main"/>
+
+</RelativeLayout>
